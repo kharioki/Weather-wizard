@@ -1,6 +1,7 @@
 import restify from 'restify';
 import axios from 'axios';
 import 'dotenv/config';
+import errors from 'restify-errors';
 
 const server = restify.createServer();
 
@@ -22,8 +23,7 @@ server.get('/cities', (req, res, next) => {
       next();
     })
     .catch(err => {
-      res.send(err);
-      next();
+      next(new errors.BadRequestError(err));
     });
 });
 
@@ -35,7 +35,11 @@ server.get('/city', (req, res, next) => {
   axios.get(url)
     .then(response => {
       res.send(response.data);
-      next();
+      next(
+        new errors.ResourceNotFoundError(
+          `There is no city with the name of ${req.query.name}`
+        )
+      );
     })
     .catch(err => {
       res.send(err);
@@ -54,7 +58,11 @@ server.get('/cities/:city_id', (req, res, next) => {
     })
     .catch(err => {
       res.send(err);
-      next();
+      next(
+        new errors.ResourceNotFoundError(
+          `There is no found city with the id of ${req.params.city_id}`
+        )
+      );
     });
 });
 
@@ -69,7 +77,7 @@ server.get('/cities/:city_id/weather', (req, res, next) => {
     })
     .catch(err => {
       res.send(err);
-      next();
+      next(new errors.BadRequestError(err));
     });
 });
 
