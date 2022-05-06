@@ -6,15 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const restify_1 = __importDefault(require("restify"));
 const axios_1 = __importDefault(require("axios"));
 require("dotenv/config");
-function respond(req, res, next) {
-    res.send('wassup ' + req.params.name);
-    next();
-}
 const server = restify_1.default.createServer();
 // Middleware
 server.use(restify_1.default.plugins.queryParser());
-// routes
-// openweathermap URL
+/**
+ * routes
+ *
+ */
 // get city by latitude and longitude
 server.get('/cities', (req, res, next) => {
     const { lat, lon } = req.query;
@@ -72,8 +70,6 @@ server.get('/cities/:city_id/weather', (req, res, next) => {
         next();
     });
 });
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
 server.listen(8080, () => {
     console.log('%s listening at %s', server.name, server.url);
 });
