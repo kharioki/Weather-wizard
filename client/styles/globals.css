@@ -3,5 +3,17 @@
 @tailwind utilities;
 
 .card {
-  @apply flex flex-col justify-between h-60 rounded-lg bg-white p-4 my-2 shadow-sm hover:shadow-md;
+  @apply flex flex-col justify-between h-40 xl:h-60 rounded-lg bg-white dark:bg-gray-800 p-4 my-2 shadow-sm hover:shadow-md;
+}
+
+.card-title {
+  @apply text-gray-500 dark:text-gray-200;
+}
+
+.card-text {
+  @apply text-gray-500 dark:text-gray-200 text-left;
+}
+
+.btn {
+  @apply border border-gray-400 sm:p-2 w-8 sm:w-10 h-8 sm:h-10 rounded-full;
 }
