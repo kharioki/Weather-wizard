@@ -139,7 +139,7 @@ export default function Home() {
               weatherData.weather && (
                 <>
                   <div className="flex flex-col items-center w-full lg:h-52">
-                    <div className="absolute top-0 lg:top-3 left-0 flex flex-col w-4/5 items-center justify-center lg:bg-slate-50 lg:dark:bg-gray-900">
+                    <div className="absolute top-0 md:top-3 xl:top-4 left-0 flex flex-col w-4/5 items-center justify-center lg:bg-slate-50 lg:dark:bg-gray-900">
                       <h1 className="text-2xl sm:text-4xl sm:text-center font-thin p-4 dark:text-gray-200">
                         Weather Wizard
                       </h1>
