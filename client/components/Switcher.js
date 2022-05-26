@@ -13,13 +13,13 @@ const Switcher = ({ theme, setTheme, selectedTemperature, setSelectedTemperature
         sunColor="#efcc00"
       />
       <button
-        className={`btn ${selectedTemperature === 'celsius' ? 'bg-gray-400 dark:bg-gray-800 text-white' : ''}`}
+        className={`btn ${selectedTemperature === 'celsius' ? 'bg-gray-900 dark:bg-gray-800 text-white' : ''}`}
         onClick={() => setSelectedTemperature('celsius')}
       >
         <h2 className='text-md sm:text-lg text-center'>°C</h2>
       </button>
       <button
-        className={`btn ${selectedTemperature === 'fahrenheit' ? 'bg-gray-400 dark:bg-gray-800 text-white' : ''}`}
+        className={`btn ${selectedTemperature === 'fahrenheit' ? 'bg-gray-900 dark:bg-gray-800 text-white' : ''}`}
         onClick={() => setSelectedTemperature('fahrenheit')}
       >
         <h2 className='text-md sm:text-lg text-center'>°F</h2>

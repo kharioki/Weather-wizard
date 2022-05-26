@@ -15,5 +15,5 @@
 }
 
 .btn {
-  @apply border border-gray-400 sm:p-2 w-8 sm:w-10 h-8 sm:h-10 rounded-full;
+  @apply sm:p-2 w-8 sm:w-10 h-8 sm:h-10 rounded-full shadow-md shadow-gray-800;
 }
